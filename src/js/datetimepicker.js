@@ -78,7 +78,7 @@ angular.module('ui.bootstrap.datetimepicker', ['pasvaz.bindonce'])
         "             ><i class='glyphicon glyphicon-arrow-right'/></th>" +
         "       </tr>" +
         "       <tr>" +
-        "           <th class='dow' bindonce ng-repeat='day in data.dayNames' ><span bo-text='day'></span> }}</th>" +
+        "           <th class='dow' bindonce ng-repeat='day in data.dayNames' ><span bo-text='day'></span> </th>" +
         "       </tr>" +
         "   </thead>" +
         "   <tbody>" +
