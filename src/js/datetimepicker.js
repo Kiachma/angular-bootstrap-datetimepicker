@@ -13,7 +13,7 @@
  *    @since        2013-Jul-8
  */
 
-angular.module('ui.bootstrap.datetimepicker', [])
+angular.module('ui.bootstrap.datetimepicker', ['pasvaz.bindonce'])
   .constant('dateTimePickerConfig', {
     dropdownSelector: null,
     minuteStep: 5,
@@ -78,23 +78,23 @@ angular.module('ui.bootstrap.datetimepicker', [])
         "             ><i class='glyphicon glyphicon-arrow-right'/></th>" +
         "       </tr>" +
         "       <tr>" +
-        "           <th class='dow' data-ng-repeat='day in data.dayNames' >{{ day }}</th>" +
+        "           <th class='dow' bindonce ng-repeat='day in data.dayNames' ><span bo-text='day'></span> }}</th>" +
         "       </tr>" +
         "   </thead>" +
         "   <tbody>" +
-        "       <tr data-ng-class='{ hide: data.currentView == \"day\" }' >" +
+        "       <tr bindonce bo-class='{ hide: data.currentView == \"day\" }' >" +
         "           <td colspan='7' >" +
-        "              <span    class='{{ data.currentView }}' " +
-        "                       data-ng-repeat='dateValue in data.dates'  " +
-        "                       data-ng-class='{active: dateValue.active, past: dateValue.past, future: dateValue.future}' " +
-        "                       data-ng-click=\"changeView(data.nextView, dateValue.date, $event)\">{{ dateValue.display }}</span> " +
+        "              <span    bo-class='{{ data.currentView }}' " +
+        "                       bindonce ng-repeat='dateValue in data.dates'  " +
+        "                       bo-class='{active: dateValue.active, past: dateValue.past, future: dateValue.future}' " +
+        "                       data-ng-click=\"changeView(data.nextView, dateValue.date, $event)\"><span bo-text='dateValue.display'></span></span> " +
         "           </td>" +
         "       </tr>" +
-        "       <tr data-ng-show='data.currentView == \"day\"' data-ng-repeat='week in data.weeks'>" +
-        "           <td data-ng-repeat='dateValue in week.dates' " +
+        "       <tr bo-show='data.currentView == \"day\"' bindonce ng-repeat='week in data.weeks'>" +
+        "           <td bindonce ng-repeat='dateValue in week.dates' " +
         "               data-ng-click='changeView(data.nextView, dateValue.date, $event)'" +
         "               class='day' " +
-        "               data-ng-class='{active: dateValue.active, past: dateValue.past, future: dateValue.future}' >{{ dateValue.display }}</td>" +
+        "               bo-class='{active: dateValue.active, past: dateValue.past, future: dateValue.future}' ><span bo-text='dateValue.display'></span></td>" +
         "       </tr>" +
         "   </tbody>" +
         "</table></div>",
