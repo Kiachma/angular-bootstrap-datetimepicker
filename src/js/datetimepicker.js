@@ -78,7 +78,7 @@ angular.module('ui.bootstrap.datetimepicker', ['pasvaz.bindonce'])
         "             ><i class='glyphicon glyphicon-arrow-right'/></th>" +
         "       </tr>" +
         "       <tr>" +
-        "           <th class='dow' bindonce ng-repeat='day in data.dayNames' ><span bo-text='day'></span> </th>" +
+        "           <th class='dow' bindonce ng-repeat='day in data.dayNames' bo-text='day'></th>" +
         "       </tr>" +
         "   </thead>" +
         "   <tbody>" +
@@ -87,14 +87,14 @@ angular.module('ui.bootstrap.datetimepicker', ['pasvaz.bindonce'])
         "              <span    bo-class='{{ data.currentView }}' " +
         "                       bindonce ng-repeat='dateValue in data.dates'  " +
         "                       bo-class='{active: dateValue.active, past: dateValue.past, future: dateValue.future}' " +
-        "                       data-ng-click=\"changeView(data.nextView, dateValue.date, $event)\"><span bo-text='dateValue.display'></span></span> " +
+        "                       data-ng-click=\"changeView(data.nextView, dateValue.date, $event)\" bo-text='dateValue.display'></span> " +
         "           </td>" +
         "       </tr>" +
         "       <tr bo-show='data.currentView == \"day\"' bindonce ng-repeat='week in data.weeks'>" +
         "           <td bindonce ng-repeat='dateValue in week.dates' " +
         "               data-ng-click='changeView(data.nextView, dateValue.date, $event)'" +
         "               class='day' " +
-        "               bo-class='{active: dateValue.active, past: dateValue.past, future: dateValue.future}' ><span bo-text='dateValue.display'></span></td>" +
+        "               bo-class='{active: dateValue.active, past: dateValue.past, future: dateValue.future}' bo-text='dateValue.display' ></td>" +
         "       </tr>" +
         "   </tbody>" +
         "</table></div>",
