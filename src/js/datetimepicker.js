@@ -84,7 +84,7 @@ angular.module('ui.bootstrap.datetimepicker', ['pasvaz.bindonce'])
         "   <tbody>" +
         "       <tr bindonce bo-class='{ hide: data.currentView == \"day\" }' >" +
         "           <td colspan='7' >" +
-        "              <span    bo-class='{{ data.currentView }}' " +
+        "              <span    class='{{ data.currentView }}' " +
         "                       bindonce ng-repeat='dateValue in data.dates'  " +
         "                       bo-class='{active: dateValue.active, past: dateValue.past, future: dateValue.future}' " +
         "                       data-ng-click=\"changeView(data.nextView, dateValue.date, $event)\" bo-text='dateValue.display'></span> " +
